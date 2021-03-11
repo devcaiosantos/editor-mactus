@@ -1,5 +1,5 @@
 
-import CKEditor from './CKEditor'
+// import CKEditor from './CKEditor'
 import Editor from './Editor';
 import ToolBar from './Editor/toolbar'
 
