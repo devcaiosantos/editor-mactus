@@ -1,0 +1,17 @@
+.Paper{
+    width: 750.31px;
+    margin-top: 20px;
+    min-height: 909.05px; 
+    background:#ffffff;
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 10px 0px;
+    padding: 29.7953px 67.5906px;
+    box-sizing: border-box;
+    word-wrap: break-word;    
+    overflow: hidden;
+    /* px 0px grey; */
+    }
+.Paper:focus{
+        outline: 0;
+
+    }
