@@ -24,7 +24,7 @@ const Editor = ()=>{
 
     return(
     <>
-      	<iframe className="Paper" name={"richTextField"}    scrolling="no" ></iframe>
+      	<iframe className="Paper" name={"richTextField"}    scrolling="no"/>
 
         {/* <button onClick={(event)=>getLenBody()}>BODY LEN</button> */}
 		    {/* <IframeResizer className="Paper" name={"richTextField"}  autoResize={true} false onChange={(event)=>console.log(event.target.value)} onLoad={(event=>console.log("ONLOAD"))}   scrolling="no" ></IframeResizer> */}
