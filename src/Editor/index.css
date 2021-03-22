@@ -1,11 +1,18 @@
 .Paper{
-    width: 750.31px;
-    margin-top: 20px;
-    min-height: 909.05px; 
+    /* width: 750.31px; */
+    width: 820.157480315px;
+    padding-top: 71.81102362205px;
+    padding-left:71.81102362205px;
+    padding-right:49.88976377953px; 
+    padding-bottom:71.81102362205px;
+    /* padding-bottom:138.7086614173px; */
+    /* height: 909.05px; */
+    /* height:1122.519685039px;  */
+    height: 1137.519685039px;
     background:#ffffff;
     border: 1px solid transparent;
     box-shadow: 0px 0px 10px 0px;
-    padding: 29.7953px 67.5906px;
+    /* padding: 29.7953px 67.5906px; */
     box-sizing: border-box;
     word-wrap: break-word;    
     overflow: hidden;
@@ -15,3 +22,54 @@
         outline: 0;
 
     }
+
+.topBar{
+    margin-bottom: 30px;
+} 
+ @media print {
+
+
+        /* GLOBAL RESET */
+       .Paper  body{
+          font-family: Georgia, serif;
+          font-size:20pt;
+          line-height: 24pt;
+          background: rgb(110, 61, 243);
+          color: rgb(190, 62, 62);
+        }
+        @page
+        {
+            padding: 50mm;
+            margin: 100mm;
+            margin-top: 0mm;
+            
+        }
+        .Paper {
+           height: 1137.519685039px;
+          } 
+        .topBar{
+            display: none;
+        }
+
+       
+    }
+    /* 
+
+@media print 
+    {
+        body{
+            background: aqua; 
+            padding: 150mm;
+            margin: 90px
+        }
+        @page
+        {
+         
+         
+         width: 820.157480315px;
+         height:1122.519685039px; 
+         margin: 0mm;
+         padding: 0mm;
+         background: aqua;
+       }
+    } */

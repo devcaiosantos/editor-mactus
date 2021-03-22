@@ -1,14 +1,68 @@
-import React, {useEffect} from 'react'
+import React, {useEffect,useState} from 'react'
+
+const iframe = document.getElementsByName("richTextField")[0]
+//A4: 297x217 mm
+//Oficio 2: 330x216 mm
+//Oficio: 356x216 mm
+// Carta: 279x216 mm
+//Oficio 9: 315x215 mm
 
 const ToolBar = () =>{
 
-    useEffect(() => {
-        window.richTextField.document.designMode= "On"
-		window.richTextField.document.body.style.overflowWrap="break-word"
-		// window.richTextField2.document.designMode= "On"
-		// window.richTextField2.document.body.style.overflowWrap="break-word"
+	const[content, setContent] = useState();
+	const[numberPage,setNumberPages] = useState();
+	const[paperHeight,setPaperHeight] =useState()
+
 	
+	//iframe.style.height = `${909.05}px`
+    useEffect(() => {
+		//Torna o IFrame Editável
+        window.richTextField.document.designMode= "On"
+
+		//Estilizando
+		window.richTextField.document.body.style.overflowWrap="break-word"
+		window.richTextField.document.body.style.margin = "0px"
+		
+		//Pega todos os clicks
+		window.richTextField.document.body.addEventListener('keyup', handlePagination);
+		
+		
     } )
+
+	
+
+
+	function printFrame(classe) {
+		
+		var frm = document.getElementsByName("richTextField")[0].contentWindow
+		frm.focus();// focus on contentWindow is needed on some ie versions
+		frm.print();
+		return false;
+}
+	
+	function handlePagination(e) {
+		
+		const iframe = document.getElementsByName("richTextField")[0]
+		if(iframe.style.height==""){
+			console.log("iframe.style.height==''")
+			iframe.style.height= "1137.52px"
+		}
+		 
+		
+		
+		//iframe.style.height = `${Number(iframe.contentWindow.document.body.scrollHeight+71.81102362205)}px`
+		if (Number(iframe.contentWindow.document.body.scrollHeight + 145.52)> Number(iframe.style.height.split("px")[0])) {
+			console.log(`<<<<<<<<<<<< ${Number(iframe.contentWindow.document.body.scrollHeight + 145.52), Number(iframe.style.height.split("px")[0])}  >>>>>>>>>>>>>>>>>`)
+		iframe.style.height = `${iframe.contentWindow.document.body.scrollHeight+ 145.52}px`
+		 }
+		 console.log(iframe.style.height+"_ _ _"+Number(iframe.contentWindow.document.body.scrollHeight+145.52))
+
+		// // if( 847 < iframe.contentWindow.document.body.scrollHeight ){
+		// // 		iframe.style.height = `${iframe.contentWindow.document.body.scrollHeight+ 65.75}px`
+		// // 		//setPaperHeight(iframe.contentWindow.document.body.scrollHeight)
+		// // // } 
+	//}
+}
 
 	
     var showingSourceCode = false;
@@ -48,7 +102,8 @@ const ToolBar = () =>{
     }
 
     return(
-        <div>
+        <div class = "topBar">
+			<button onClick={(event)=>printFrame('Paper')}>Preview</button>
 			<button onClick={(event)=>execCmd('bold')}><i className="fa fa-bold"></i></button>
 			<button onClick={(event)=>execCmd('italic')}><i className="fa fa-italic"></i></button>
 			<button onClick={(event)=>execCmd('underline')}><i className="fa fa-underline"></i></button>
