@@ -16,6 +16,7 @@
     box-sizing: border-box;
     word-wrap: break-word;    
     overflow: hidden;
+    font-size: 12px;
     /* px 0px grey; */
     }
 .Paper:focus{
@@ -26,11 +27,11 @@
 .topBar{
     margin-bottom: 30px;
 } 
- @media print {
+ /* @media print { */
 
 
         /* GLOBAL RESET */
-       .Paper  body{
+       /* .Paper  body{
           font-family: Georgia, serif;
           font-size:20pt;
           line-height: 24pt;
@@ -52,7 +53,7 @@
         }
 
        
-    }
+    } */
     /* 
 
 @media print 

@@ -11,3 +11,36 @@ html,body{
 
 
 }
+
+
+@page  {
+    size:auto;
+    margin-top: 19.00000000000073mm !important;
+    margin-left:19.00000000000073mm !important ;
+    margin-right:13.200000000000646mm !important;
+    margin-bottom:19.00000000000073mm !important;;
+}
+
+
+@media print {
+  html,body{
+      background: #FFFFFF;
+     
+  } 
+
+
+ #invisiblePaper{
+ 
+     /* padding-top: 71.81102362205px;
+      padding-top: 71.81102362205px;
+    padding-left:71.81102362205px; 
+       padding-right:49.88976377953px; 
+      padding-bottom:71.81102362205px;  */
+      word-wrap: break-word;    
+      overflow: hidden; 
+    
+ }
+}
+/* } */
+
+  

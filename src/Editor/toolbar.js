@@ -25,11 +25,13 @@ const ToolBar = () =>{
 		
 		//Pega todos os clicks
 		window.richTextField.document.body.addEventListener('keyup', handlePagination);
-		
+	 	
 		
     } )
 
-	
+	var invPaper = document.getElementsByClassName("invisiblePaper"); 
+
+
 
 
 	function printFrame(classe) {
@@ -41,7 +43,11 @@ const ToolBar = () =>{
 }
 	
 	function handlePagination(e) {
-		
+		console.log("ENTROU PAGINATION")
+		var paperContent = document.getElementsByName("richTextField")[0].contentWindow.document.body.innerHTML
+		console.log(paperContent)
+		document.getElementById("invisiblePaper").innerHTML = `${paperContent}`;
+		console.log("PASSOU INVPAPER")
 		const iframe = document.getElementsByName("richTextField")[0]
 		if(iframe.style.height==""){
 			console.log("iframe.style.height==''")
